@@ -6,7 +6,7 @@ import Snackbar from 'react-native-snackbar'
 const appwriteClient = new Client()
 
 const APPWRITE_ENDPOINT: string = Config.APPWRITE_ENDPOINT!;
-const APPWRITE_PROJECT_ID:string = Config.APPWRITE_PROJECT_ID!;
+const APPWRITE_PROJECT_ID: string = Config.APPWRITE_PROJECT_ID!;
 
 type CreateUserAccount = {
     email: string;
@@ -40,7 +40,6 @@ class AppwriteService {
                 name
             )
             if (userAccount) {
-                //TODO: create login feature
                 return this.login({email, password})
             } else {
                 return userAccount
@@ -50,8 +49,7 @@ class AppwriteService {
                 text: String(error),
                 duration: Snackbar.LENGTH_LONG
             })
-            console.log("Appwrite service :: createAccount() :: " + error);
-            
+            console.log("Appwrite service :: createAccount() :: " + error);    
         }
     }
 
@@ -63,8 +61,7 @@ class AppwriteService {
                 text: String(error),
                 duration: Snackbar.LENGTH_LONG
             })
-            console.log("Appwrite service :: loginAccount() :: " + error);
-            
+            console.log("Appwrite service :: loginAccount() :: " + error);    
         }
     }
 
